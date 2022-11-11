@@ -25,7 +25,11 @@ exports.queen_view_all_Page = async function(req, res) {
         res.send(`{"error": ${err}}`); 
     }   
 }; 
+
 // for a specific Costume. 
+//exports.queen_detail = function(req, res) { 
+    //res.send('NOT IMPLEMENTED: Queen detail: ' + req.params.id); 
+
 exports.queen_detail = async function(req, res) {
     console.log("detail" + req.params.id)
     try {
@@ -36,8 +40,10 @@ exports.queen_detail = async function(req, res) {
     res.send(`{"error": document for id ${req.params.id} not found`);
     }
 
+
 }; 
- 
+
+
 // Handle Costume create on POST. 
 // Handle Costume create on POST. 
 exports.queen_create_post = async function(req, res) { 
