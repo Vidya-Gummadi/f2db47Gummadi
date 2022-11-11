@@ -26,8 +26,16 @@ exports.queen_view_all_Page = async function(req, res) {
     }   
 }; 
 // for a specific Costume. 
-exports.queen_detail = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Queen detail: ' + req.params.id); 
+exports.queen_detail = async function(req, res) {
+    console.log("detail" + req.params.id)
+    try {
+    result = await Queen.findById( req.params.id)
+    res.send(result)
+    } catch (error) {
+    res.status(500)
+    res.send(`{"error": document for id ${req.params.id} not found`);
+    }
+
 }; 
  
 // Handle Costume create on POST. 
@@ -58,6 +66,23 @@ exports.queen_delete = function(req, res) {
 }; 
  
 // Handle Costume update form on PUT. 
-exports.queen_update_put = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Queen update PUT' + req.params.id); 
+exports.queen_update_put = async function(req, res) {
+    console.log(`update on id ${req.params.id} with body
+    ${JSON.stringify(req.body)}`)
+    try {
+    let toUpdate = await Queen.findById( req.params.id)
+    // Do updates of properties
+    if(req.body.name)
+    toUpdate.name = req.body.name;
+    if(req.body.age) toUpdate.age = req.body.age;
+    if(req.body.place) toUpdate.place = req.body.place;
+    let result = await toUpdate.save();
+    console.log("Sucess " + result)
+    res.send(result)
+    } catch (err) {
+    res.status(500)
+    res.send(`{"error": ${err}: Update for id ${req.params.id}
+    failed`);
+    }
+  
 }; 
