@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1= title 
-  - var results = [{"name": "Elizabeth I", "age": 87, "place": "England"}, {"name": "Mary Tudor", "age": 47, "place": "France"}, {"name": "Lakshmi Bai", "age": 56, "place": "India"}]
+  - var results = results
     div(class = 'container-fluid')
         div(class = 'row')
             each i,j in results 
