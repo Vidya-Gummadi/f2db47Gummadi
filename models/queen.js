@@ -5,4 +5,5 @@ const queenSchema = mongoose.Schema({
  place: String 
 }) 
  
-module.exports = mongoose.model("Queen", queenSchema)
+module.exports = mongoose.model("Queen", 
+queenSchema)

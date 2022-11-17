@@ -1,0 +1,26 @@
+extends layout 
+ 
+block content 
+  h1= title 
+  if (toShow == null) 
+    h2 No instance to detail 
+  else 
+
+ 
+  - let _id = toShow._id 
+  - let name = toShow.name 
+  - let age = toShow.age 
+  - let place = toShow.place 
+  div 
+    div.row 
+      div(class='queenAttr mr-3') Queen ID is: 
+      div #{_id} 
+    div.row 
+      div(class='queenAttr mr-3') Queen name is: 
+      div #{name} 
+    div.row 
+      div(class='queenAttr mr-3') Queen age is: 
+      div #{age} 
+    div.row 
+      div(class='queenAttr mr-3') Queen place is: 
+      div #{place} 

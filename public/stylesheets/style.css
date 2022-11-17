@@ -6,3 +6,21 @@ body {
 a {
   color: #00B7FF;
 }
+.queenAttr { 
+  background-color: rgb(195, 255, 127); 
+  width: 120px; 
+  font-size: large;
+  font-style: italic;
+} 
+.queendelete {
+  background-color: rgb(127, 187, 255);
+  width: 190px;
+}
+
+.b {
+  font-style: italic;
+  background-color: rgb(131, 27, 84);
+  text-align: center;
+  font-family: sans-serif;
+  
+ }
