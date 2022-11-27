@@ -1,6 +1,9 @@
 const mongoose = require("mongoose") 
 const queenSchema = mongoose.Schema({ 
- name: String, 
+ name:{
+type: String,
+minLength:3
+ }, 
  age: Number, 
  place: String 
 }) 
