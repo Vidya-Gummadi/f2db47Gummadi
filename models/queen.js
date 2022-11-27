@@ -5,7 +5,10 @@ type: String,
 minLength:3
  }, 
  age: Number, 
- place: String 
+ place: {
+    type: String,
+    maxLength:10
+     },  
 }) 
  
 module.exports = mongoose.model("Queen", 
